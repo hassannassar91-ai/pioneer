@@ -3,13 +3,14 @@
 @source "../../../../templates/**/*.html";
 
 @theme {
+  /* Logo-derived: navy #002147, gold #C59D5F, dark gold #9A7B4F */
   --color-vt-navy-950: #001428;
-  --color-vt-navy-900: #002b5b;
-  --color-vt-navy-800: #003d7a;
+  --color-vt-navy-900: #002147;
+  --color-vt-navy-800: #003366;
   --color-vt-cyan: #c59d5f;
-  --color-vt-blue: #a8844a;
+  --color-vt-blue: #9a7b4f;
   --color-vt-silver: #c8d0dc;
-  --color-vt-surface: #f8f9fb;
+  --color-vt-surface: #f6f8fb;
   --color-vt-surface-elevated: #ffffff;
   --color-vt-text: #0f172a;
   --color-vt-muted: #64748b;
@@ -43,7 +44,7 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-vt-cyan ring-offset-2 ring-offset-vt-navy-950;
+    @apply outline-none ring-2 ring-vt-cyan ring-offset-2 ring-offset-white;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -71,7 +72,7 @@
   }
 
   .vt-container-wide {
-    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
   .vt-section-dark {
@@ -83,14 +84,14 @@
   }
 
   .vt-section-alt {
-    @apply bg-vt-surface text-vt-text;
+    @apply bg-white text-vt-text;
   }
 
   .vt-pixel-grid {
     background-image:
-      linear-gradient(rgba(197, 157, 95, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(197, 157, 95, 0.06) 1px, transparent 1px);
-    background-size: 24px 24px;
+      linear-gradient(rgba(197, 157, 95, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(197, 157, 95, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
   }
 
   .vt-heading-accent {
@@ -98,7 +99,7 @@
   }
 
   .vt-btn-primary {
-    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg bg-linear-to-r from-vt-blue to-vt-cyan px-6 py-2.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(197,157,95,0.35)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_0_32px_rgba(197,157,95,0.45)] disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none;
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg bg-linear-to-r from-vt-blue to-vt-cyan px-6 py-2.5 text-sm font-semibold text-vt-navy-950 shadow-[0_0_24px_rgba(197,157,95,0.35)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_0_32px_rgba(197,157,95,0.5)] disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none;
   }
 
   .vt-btn-ghost {
@@ -110,7 +111,7 @@
   }
 
   .vt-btn-primary-light {
-    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg bg-linear-to-r from-vt-blue to-vt-cyan px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none;
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg bg-linear-to-r from-vt-blue to-vt-cyan px-6 py-2.5 text-sm font-semibold text-vt-navy-950 shadow-md transition-all duration-200 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none;
   }
 
   .vt-card {
@@ -118,7 +119,7 @@
   }
 
   .vt-card-hover {
-    @apply rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none sm:p-8;
+    @apply rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-vt-cyan/30 hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none sm:p-8;
   }
 
   .vt-glass-card {
@@ -148,20 +149,43 @@
   }
 
   .vt-page-hero {
-    @apply relative overflow-hidden bg-linear-to-b from-vt-navy-800 via-vt-navy-900 to-vt-navy-950 py-16 text-white sm:py-20;
+    @apply relative overflow-hidden bg-white py-16 text-vt-navy-900 sm:py-20;
   }
 
   .vt-page-hero::before {
     content: "";
-    @apply pointer-events-none absolute inset-0 opacity-40;
-    background: radial-gradient(ellipse 80% 60% at 20% 0%, rgba(197, 157, 95, 0.18), transparent 60%);
+    @apply pointer-events-none absolute inset-0 opacity-100;
+    background:
+      radial-gradient(ellipse 55% 45% at 85% 25%, rgba(197, 157, 95, 0.1), transparent 60%),
+      radial-gradient(ellipse 40% 35% at 10% 80%, rgba(0, 33, 71, 0.04), transparent 55%);
+  }
+
+  .vt-page-hero::after {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-slate-200 to-transparent;
+  }
+
+  .vt-page-hero .vt-lead {
+    @apply text-vt-muted;
   }
 
   .vt-nav-link {
-    @apply relative inline-flex min-h-11 items-center px-1 text-sm font-medium text-vt-silver transition-colors hover:text-white;
+    @apply relative inline-flex min-h-11 items-center px-1 text-sm font-medium transition-colors;
   }
 
-  .vt-nav-link.is-active {
+  .vt-header-top .vt-nav-link {
+    @apply text-vt-navy-900/75 hover:text-vt-navy-950;
+  }
+
+  .vt-header-top .vt-nav-link.is-active {
+    @apply text-vt-navy-950;
+  }
+
+  .vt-header-scrolled .vt-nav-link {
+    @apply text-vt-silver hover:text-white;
+  }
+
+  .vt-header-scrolled .vt-nav-link.is-active {
     @apply text-white;
   }
 
@@ -171,11 +195,11 @@
   }
 
   .vt-tagline {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-vt-cyan/80;
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-vt-cyan;
   }
 
   .vt-industry-pill {
-    @apply inline-flex items-center rounded-full border border-vt-blue/20 bg-white px-4 py-2 text-sm font-medium text-vt-navy-900 transition-colors hover:border-vt-cyan/40 hover:text-vt-blue;
+    @apply inline-flex items-center rounded-full border border-vt-cyan/25 bg-white px-4 py-2 text-sm font-medium text-vt-navy-900 transition-colors hover:border-vt-cyan/50 hover:text-vt-blue;
   }
 
   .vt-form-input {
@@ -224,37 +248,58 @@
     animation: vt-hero-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  .vt-hero-glow {
-    @apply pointer-events-none absolute inset-0 rounded-3xl;
-    background: radial-gradient(circle at 50% 50%, rgba(197, 157, 95, 0.25), transparent 65%);
-    animation: vt-glow-pulse 4s ease-in-out infinite;
-  }
-
   .vt-hero-frame {
-    @apply relative mx-auto max-w-sm rounded-3xl border border-white/10 bg-vt-navy-900/60 p-8 backdrop-blur-sm;
+    @apply relative mx-auto rounded-2xl border border-slate-200/90 bg-white p-6 shadow-[0_8px_32px_rgba(0,33,71,0.08)] sm:p-8;
   }
 
-  .vt-pixel {
-    @apply absolute size-2 rounded-sm bg-vt-cyan/60;
-    animation: vt-pixel-rise 3s ease-in-out infinite;
+  .vt-hero-logo {
+    @apply relative z-10 mx-auto block h-auto w-full max-w-[260px] sm:max-w-[300px];
   }
 
   .vt-header-scrolled {
-    @apply border-b border-vt-cyan/15 bg-vt-navy-950/95 shadow-lg backdrop-blur-lg;
+    @apply border-b border-vt-cyan/20 bg-vt-navy-950/95 shadow-lg backdrop-blur-lg;
   }
 
   .vt-header-top {
-    @apply border-b border-transparent bg-transparent;
+    @apply border-b border-slate-200/60 bg-white/90 backdrop-blur-md;
+  }
+
+  .vt-header-top [data-nav-toggle] {
+    @apply border-vt-navy-800/15 text-vt-navy-900;
+  }
+
+  .vt-header-scrolled [data-nav-toggle] {
+    @apply border-white/15 text-white;
+  }
+
+  .vt-header-top .vt-lang-btn {
+    @apply text-vt-muted hover:text-vt-navy-900;
+  }
+
+  .vt-header-top .vt-lang-btn.is-active {
+    @apply bg-vt-cyan/20 text-vt-navy-900;
+  }
+
+  .vt-header-scrolled .vt-lang-btn {
+    @apply text-vt-silver hover:text-white;
+  }
+
+  .vt-header-scrolled .vt-lang-btn.is-active {
+    @apply bg-vt-cyan/25 text-white;
   }
 
   .vt-drawer-open {
     @apply overflow-hidden;
   }
+
+  .vt-trust-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-vt-cyan/25 bg-vt-navy-900/60 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-vt-cyan;
+  }
 }
 
 @layer utilities {
   .vt-glow-radial {
-    background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(197, 157, 95, 0.12), transparent);
+    background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(197, 157, 95, 0.14), transparent);
   }
 }
 
