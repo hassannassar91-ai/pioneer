@@ -1,6 +1,6 @@
 # Deploy: Render Dashboard → New → Blueprint → connect github.com/hassannassar91-ai/pioneer
-# Live URL: https://pioneer-web.onrender.com
-# No database — sessions/messages use signed cookies (same pattern as the Visions marketing site).
+# Live URL: https://pss-om.onrender.com
+# Custom domain: pss-om.com (DNS at your registrar must match Render’s instructions).
 
 services:
   - type: web
@@ -10,6 +10,9 @@ services:
     buildCommand: bash build.sh
     startCommand: gunicorn pioneer.wsgi:application --bind 0.0.0.0:$PORT
     healthCheckPath: /
+    domains:
+      - pss-om.com
+      - www.pss-om.com
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.8
@@ -18,9 +21,8 @@ services:
       - key: DJANGO_DEBUG
         value: "false"
       - key: DJANGO_ALLOWED_HOSTS
-        value: .onrender.com,pioneer-web.onrender.com
+        value: pss-om.onrender.com,pss-om.com,www.pss-om.com
       - key: DJANGO_CSRF_TRUSTED_ORIGINS
-        value: https://pioneer-web.onrender.com
-      # RENDER_EXTERNAL_URL is set automatically by Render and added in settings.py
+        value: https://pss-om.onrender.com,https://pss-om.com,https://www.pss-om.com
       - key: DJANGO_SECRET_KEY
         generateValue: true

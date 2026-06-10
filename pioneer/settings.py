@@ -18,7 +18,9 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get("DJANGO_DEBUG", "true").lower() in ("1", "true", "yes")
 
 DEFAULT_PROD_DOMAINS = [
-    "pioneer-web.onrender.com",
+    "pss-om.onrender.com",
+    "pss-om.com",
+    "www.pss-om.com",
 ]
 
 
