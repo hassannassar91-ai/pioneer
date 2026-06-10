@@ -59,6 +59,8 @@ Repo: [github.com/hassannassar91-ai/pioneer](https://github.com/hassannassar91-a
 | **Build command** | `bash build.sh` |
 | **Start command** | `gunicorn pioneer.wsgi:application --bind 0.0.0.0:$PORT` |
 
+**Important:** Do not use `hasan_test.wsgi` — that is the Visions repo only. If deploy fails with `No module named 'hasan_test'`, update **Settings → Start Command** in the Render dashboard.
+
 `build.sh` runs: `pip install` → `npm ci` + `npm run build:css` → `collectstatic` (skips migrate when no `DATABASE_URL`).
 
 ### Environment (set automatically by Blueprint)
