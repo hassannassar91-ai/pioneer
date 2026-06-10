@@ -18,8 +18,9 @@ services:
       - key: DJANGO_DEBUG
         value: "false"
       - key: DJANGO_ALLOWED_HOSTS
-        value: pioneer-web.onrender.com
+        value: .onrender.com,pioneer-web.onrender.com
       - key: DJANGO_CSRF_TRUSTED_ORIGINS
         value: https://pioneer-web.onrender.com
+      # RENDER_EXTERNAL_URL is set automatically by Render and added in settings.py
       - key: DJANGO_SECRET_KEY
         generateValue: true

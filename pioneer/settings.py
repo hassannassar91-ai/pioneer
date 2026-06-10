@@ -4,6 +4,7 @@ Django settings for Pioneer project.
 
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 import dj_database_url
 
@@ -20,17 +21,49 @@ DEFAULT_PROD_DOMAINS = [
     "pioneer-web.onrender.com",
 ]
 
-_allowed = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
-if _allowed:
-    ALLOWED_HOSTS = [h.strip() for h in _allowed.split(",") if h.strip()]
-else:
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1"] + DEFAULT_PROD_DOMAINS
 
-_csrf = os.environ.get("DJANGO_CSRF_TRUSTED_ORIGINS", "").strip()
-if _csrf:
-    CSRF_TRUSTED_ORIGINS = [x.strip() for x in _csrf.split(",") if x.strip()]
-else:
-    CSRF_TRUSTED_ORIGINS = [f"https://{domain}" for domain in DEFAULT_PROD_DOMAINS]
+def _dedupe(items):
+    return list(dict.fromkeys(items))
+
+
+def _build_allowed_hosts():
+    hosts = []
+    env_hosts = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
+    if env_hosts:
+        hosts.extend(h.strip() for h in env_hosts.split(",") if h.strip())
+
+    render_url = os.environ.get("RENDER_EXTERNAL_URL", "").strip()
+    if render_url:
+        render_host = urlparse(render_url).hostname
+        if render_host:
+            hosts.append(render_host)
+
+    if not hosts:
+        hosts = ["localhost", "127.0.0.1", *DEFAULT_PROD_DOMAINS]
+
+    # Any Render service URL (e.g. pioneer.onrender.com vs pioneer-web.onrender.com).
+    hosts.append(".onrender.com")
+    return _dedupe(hosts)
+
+
+def _build_csrf_origins():
+    origins = []
+    env_origins = os.environ.get("DJANGO_CSRF_TRUSTED_ORIGINS", "").strip()
+    if env_origins:
+        origins.extend(x.strip() for x in env_origins.split(",") if x.strip())
+
+    render_url = os.environ.get("RENDER_EXTERNAL_URL", "").strip()
+    if render_url:
+        origins.append(render_url.rstrip("/"))
+
+    if not origins:
+        origins = [f"https://{domain}" for domain in DEFAULT_PROD_DOMAINS]
+
+    return _dedupe(origins)
+
+
+ALLOWED_HOSTS = _build_allowed_hosts()
+CSRF_TRUSTED_ORIGINS = _build_csrf_origins()
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
