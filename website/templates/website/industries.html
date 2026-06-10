@@ -1,0 +1,70 @@
+{% extends "website/base.html" %}
+
+{% block title %}Industries — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "website/partials/_page_hero.html" with eyebrow_en="Industry expertise" eyebrow_ar="خبراتنا القطاعية" title_en='Industry <span class="vt-heading-accent">expertise</span>' title_ar='خبرات <span class="vt-heading-accent">قطاعية</span>' lead_en="Pioneer Smart Systems serves organizations across diverse sectors where technology must deliver measurable business and service outcomes." lead_ar="تخدم Pioneer Smart Systems مؤسسات في قطاعات متنوعة يكون فيها مطلوباً من التقنية تحقيق نتائج أعمال وخدمات قابلة للقياس." %}
+
+<section class="vt-section-light py-16 sm:py-20">
+  <div class="vt-container-wide">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="{% url 'contact' %}" class="vt-card-hover block vt-reveal" data-reveal-delay="0">
+        <div class="mb-4 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
+        </div>
+        <h2 class="text-xl font-bold text-vt-navy-900 en">Government</h2>
+        <h2 class="text-xl font-bold text-vt-navy-900 ar">الحكومة</h2>
+        <p class="en mt-3 text-sm text-vt-muted">Enable digital public services, municipal systems, workflow automation, and integrated data environments for smarter governance.</p>
+        <p class="ar mt-3 text-sm text-vt-muted">تمكين الخدمات الحكومية الرقمية، وأنظمة البلديات، وأتمتة الإجراءات، وبيئات البيانات المتكاملة لحوكمة أكثر ذكاءً.</p>
+      </a>
+      <a href="{% url 'contact' %}" class="vt-card-hover block vt-reveal" data-reveal-delay="50">
+        <div class="mb-4 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+        </div>
+        <h2 class="text-xl font-bold text-vt-navy-900 en">Healthcare</h2>
+        <h2 class="text-xl font-bold text-vt-navy-900 ar">الرعاية الصحية</h2>
+        <p class="en mt-3 text-sm text-vt-muted">Support smarter operations, service visibility, data-driven decision-making, and digital experiences across healthcare institutions.</p>
+        <p class="ar mt-3 text-sm text-vt-muted">دعم عمليات أكثر ذكاءً، ورؤية تشغيلية أوضح، واتخاذ قرارات مبني على البيانات، وتجارب رقمية أفضل داخل المؤسسات الصحية.</p>
+      </a>
+      <a href="{% url 'contact' %}" class="vt-card-hover block vt-reveal" data-reveal-delay="100">
+        <div class="mb-4 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25c.621 0 1.125.504 1.125 1.125v.375m-19.5 0V15a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 15V6m-19.5 0h19.5" /></svg>
+        </div>
+        <h2 class="text-xl font-bold text-vt-navy-900 en">Banking &amp; Financial Services</h2>
+        <h2 class="text-xl font-bold text-vt-navy-900 ar">البنوك والخدمات المالية</h2>
+        <p class="en mt-3 text-sm text-vt-muted">Improve operational control, service efficiency, analytics readiness, and customer engagement through secure enterprise solutions.</p>
+        <p class="ar mt-3 text-sm text-vt-muted">تحسين الضبط التشغيلي، وكفاءة الخدمة، والجاهزية التحليلية، وتفاعل العملاء عبر حلول مؤسسية آمنة.</p>
+      </a>
+      <a href="{% url 'contact' %}" class="vt-card-hover block vt-reveal" data-reveal-delay="150">
+        <div class="mb-4 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" /></svg>
+        </div>
+        <h2 class="text-xl font-bold text-vt-navy-900 en">Retail</h2>
+        <h2 class="text-xl font-bold text-vt-navy-900 ar">التجزئة</h2>
+        <p class="en mt-3 text-sm text-vt-muted">Enable better demand visibility, customer intelligence, faster operations, and connected business applications.</p>
+        <p class="ar mt-3 text-sm text-vt-muted">تمكين رؤية أفضل للطلب، وذكاء أعلى للعملاء، وعمليات أسرع، وتطبيقات أعمال مترابطة.</p>
+      </a>
+      <a href="{% url 'contact' %}" class="vt-card-hover block vt-reveal" data-reveal-delay="200">
+        <div class="mb-4 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" /></svg>
+        </div>
+        <h2 class="text-xl font-bold text-vt-navy-900 en">Manufacturing</h2>
+        <h2 class="text-xl font-bold text-vt-navy-900 ar">التصنيع</h2>
+        <p class="en mt-3 text-sm text-vt-muted">Support process optimization, inventory control, production visibility, and enterprise planning across manufacturing environments.</p>
+        <p class="ar mt-3 text-sm text-vt-muted">دعم تحسين العمليات، وضبط المخزون، ورؤية الإنتاج، والتخطيط المؤسسي عبر بيئات التصنيع.</p>
+      </a>
+      <a href="{% url 'contact' %}" class="vt-card-hover block vt-reveal" data-reveal-delay="250">
+        <div class="mb-4 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" /></svg>
+        </div>
+        <h2 class="text-xl font-bold text-vt-navy-900 en">Logistics</h2>
+        <h2 class="text-xl font-bold text-vt-navy-900 ar">الخدمات اللوجستية</h2>
+        <p class="en mt-3 text-sm text-vt-muted">Strengthen planning, tracking, field operations, and service continuity through integrated systems and data visibility.</p>
+        <p class="ar mt-3 text-sm text-vt-muted">تعزيز التخطيط والتتبع والعمليات الميدانية واستمرارية الخدمة عبر أنظمة متكاملة ورؤية واضحة للبيانات.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% include "website/partials/_cta_band.html" %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<section class="vt-page-hero vt-pixel-grid pt-28 sm:pt-32">
+  <div class="vt-container-wide relative">
+    <p class="vt-tagline vt-anim-inner mb-4">{% if is_arabic %}{{ eyebrow_ar|default:eyebrow_en }}{% else %}{{ eyebrow_en }}{% endif %}</p>
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl vt-anim-inner">
+      {% if title_en %}<span class="en">{{ title_en|safe }}</span>{% endif %}
+      {% if title_ar %}<span class="ar">{{ title_ar|safe }}</span>{% endif %}
+    </h1>
+    {% if lead_en %}
+    <p class="en mt-6 max-w-3xl text-lg text-vt-silver vt-anim-inner">{{ lead_en }}</p>
+    {% endif %}
+    {% if lead_ar %}
+    <p class="ar mt-6 max-w-3xl text-lg text-vt-silver vt-anim-inner">{{ lead_ar }}</p>
+    {% endif %}
+    {% if show_actions %}
+    <div class="mt-8 flex flex-wrap gap-4 vt-anim-inner">
+      <a href="{% url 'solutions' %}" class="vt-btn-primary">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        {% if is_arabic %}استعرض حلولنا{% else %}Explore our solutions{% endif %}
+      </a>
+      <a href="{% url 'contact' %}" class="vt-btn-ghost">{% if is_arabic %}تواصل معنا{% else %}Contact us{% endif %}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>

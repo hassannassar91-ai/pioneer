@@ -1,0 +1,44 @@
+{% load static %}
+<footer class="vt-section-dark border-t border-vt-cyan/15">
+  <div class="vt-container py-12 lg:py-16">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div>
+        <img
+          src="{% static 'website/images/pioneer-logo.png' %}"
+          alt="{{ company_name }}"
+          class="mb-4 h-12 w-auto"
+          width="240"
+          height="90"
+          loading="lazy"
+          decoding="async"
+        >
+        <p class="vt-tagline mb-3">
+          {% if is_arabic %}نبتكر <span class="text-vt-cyan/50">•</span> ندمج <span class="text-vt-cyan/50">•</span> نُلهم{% else %}Innovate <span class="text-vt-cyan/50">•</span> Integrate <span class="text-vt-cyan/50">•</span> Inspire{% endif %}
+        </p>
+        <p class="text-sm text-vt-silver">{% if is_arabic %}{{ company_name_ar }} — حلول رقمية للمؤسسات{% else %}{{ company_name }} — enterprise digital solutions{% endif %}</p>
+        <p class="mt-2 text-xs text-vt-silver/80">{% if is_arabic %}سلطنة عُمان{% else %}Sultanate of Oman{% endif %}</p>
+      </div>
+      <div>
+        <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">{% if is_arabic %}استكشف{% else %}Explore{% endif %}</p>
+        <ul class="space-y-2 text-sm text-vt-silver">
+          <li><a href="{% url 'home' %}" class="cursor-pointer hover:text-vt-cyan">{% if is_arabic %}الرئيسية{% else %}Home{% endif %}</a></li>
+          <li><a href="{% url 'about' %}" class="cursor-pointer hover:text-vt-cyan">{% if is_arabic %}من نحن{% else %}About{% endif %}</a></li>
+          <li><a href="{% url 'solutions' %}" class="cursor-pointer hover:text-vt-cyan">{% if is_arabic %}الحلول{% else %}Solutions{% endif %}</a></li>
+          <li><a href="{% url 'industries' %}" class="cursor-pointer hover:text-vt-cyan">{% if is_arabic %}القطاعات{% else %}Industries{% endif %}</a></li>
+          <li><a href="{% url 'products' %}" class="cursor-pointer hover:text-vt-cyan">{% if is_arabic %}المنتجات{% else %}Products{% endif %}</a></li>
+          <li><a href="{% url 'projects' %}" class="cursor-pointer hover:text-vt-cyan">{% if is_arabic %}المشاريع{% else %}Projects{% endif %}</a></li>
+          <li><a href="{% url 'contact' %}" class="cursor-pointer hover:text-vt-cyan">{% if is_arabic %}تواصل معنا{% else %}Contact{% endif %}</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">{% if is_arabic %}تواصل{% else %}Connect{% endif %}</p>
+        <ul class="space-y-2 text-sm text-vt-silver">
+          <li><a href="{% url 'contact' %}" class="cursor-pointer hover:text-vt-cyan">{% if is_arabic %}أرسل رسالة{% else %}Send a message{% endif %}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 border-t border-white/10 pt-6 text-center text-sm text-vt-silver">
+      <p>&copy; {% now "Y" %} {{ company_name }}. {% if is_arabic %}جميع الحقوق محفوظة.{% else %}All rights reserved.{% endif %}</p>
+    </div>
+  </div>
+</footer>

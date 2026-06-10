@@ -1,0 +1,31 @@
+# Deploy: Render Dashboard → New → Blueprint → connect this repo.
+
+services:
+  - type: web
+    runtime: python
+    name: pioneer-web
+    plan: starter
+    buildCommand: bash build.sh
+    startCommand: gunicorn pioneer.wsgi:application --bind 0.0.0.0:$PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: DJANGO_DEBUG
+        value: "false"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: pioneer-web.onrender.com
+      - key: DJANGO_CSRF_TRUSTED_ORIGINS
+        value: https://pioneer-web.onrender.com
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pioneer-db
+          property: connectionString
+
+databases:
+  - name: pioneer-db
+    plan: free

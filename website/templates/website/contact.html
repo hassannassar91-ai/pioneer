@@ -1,0 +1,79 @@
+{% extends "website/base.html" %}
+
+{% block title %}Contact — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "website/partials/_page_hero.html" with eyebrow_en="Get in touch" eyebrow_ar="تواصل معنا" title_en="Let's build your <span class=\"vt-heading-accent\">transformation</span> journey" title_ar="دعونا نبني رحلة <span class=\"vt-heading-accent\">التحول</span> الخاصة بكم" lead_en="Whether you are exploring ERP, digital transformation, AI, or enterprise infrastructure, our team is ready to discuss your goals and recommend the right path forward." lead_ar="سواء كنتم تدرسون ERP أو التحول الرقمي أو الذكاء الصناعي أو البنية التحتية المؤسسية، فإن فريقنا جاهز لمناقشة أهدافكم واقتراح المسار الأنسب للمضي قدماً." %}
+
+<section class="vt-section-light py-16 sm:py-20">
+  <div class="vt-container-wide">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <form class="vt-card vt-reveal" method="post" action="{% url 'contact' %}" data-contact-form novalidate>
+        {% csrf_token %}
+        <h2 class="text-2xl font-bold text-vt-navy-900">{% if is_arabic %}أرسل رسالة{% else %}Send a message{% endif %}</h2>
+
+        <div class="mt-6 space-y-4">
+          <div>
+            <label class="vt-form-label" for="id_name">{% if is_arabic %}الاسم الكامل{% else %}Full name{% endif %} <span class="text-red-500">*</span></label>
+            <input class="vt-form-input" id="id_name" name="name" type="text" autocomplete="name" required aria-required="true">
+          </div>
+          <div>
+            <label class="vt-form-label" for="id_email">{% if is_arabic %}البريد الإلكتروني{% else %}Email address{% endif %} <span class="text-red-500">*</span></label>
+            <input class="vt-form-input" id="id_email" name="email" type="email" autocomplete="email" required aria-required="true">
+          </div>
+          <div>
+            <label class="vt-form-label" for="id_company">{% if is_arabic %}اسم الشركة{% else %}Company name{% endif %}</label>
+            <input class="vt-form-input" id="id_company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div>
+            <label class="vt-form-label" for="id_phone">{% if is_arabic %}رقم الهاتف{% else %}Phone number{% endif %}</label>
+            <input class="vt-form-input" id="id_phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div>
+            <label class="vt-form-label" for="id_message">{% if is_arabic %}الرسالة{% else %}Message{% endif %} <span class="text-red-500">*</span></label>
+            <textarea class="vt-form-input min-h-[132px] py-3" id="id_message" name="message" rows="5" required aria-required="true"></textarea>
+          </div>
+        </div>
+
+        <button class="vt-btn-primary-light mt-6 w-full sm:w-auto" type="submit">
+          {% if is_arabic %}إرسال الرسالة{% else %}Send message{% endif %}
+        </button>
+      </form>
+
+      <div class="space-y-6">
+        <article class="vt-card vt-reveal" data-reveal-delay="100">
+          <h2 class="text-2xl font-bold text-vt-navy-900">{% if is_arabic %}مكاتبنا{% else %}Our offices{% endif %}</h2>
+          <div class="mt-6 space-y-6">
+            <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+              <p class="font-semibold text-vt-navy-900 en">Head Office — Jordan</p>
+              <p class="font-semibold text-vt-navy-900 ar">المكتب الرئيسي — الأردن</p>
+              <p class="en mt-2 text-sm text-vt-muted">7th Circle, Amman, Hashemite Kingdom of Jordan</p>
+              <p class="ar mt-2 text-sm text-vt-muted">الدوار السابع، عمّان، المملكة الأردنية الهاشمية</p>
+              <a href="https://maps.google.com/?q=7th+Circle+Amman+Jordan" class="vt-text-link mt-3" rel="noopener noreferrer" target="_blank">{% if is_arabic %}عرض على الخريطة{% else %}View on map{% endif %}</a>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+              <p class="font-semibold text-vt-navy-900 en">Regional Office — Oman</p>
+              <p class="font-semibold text-vt-navy-900 ar">المكتب الإقليمي — عُمان</p>
+              <p class="en mt-2 text-sm text-vt-muted">Al Athaiba, Muscat, Sultanate of Oman</p>
+              <p class="ar mt-2 text-sm text-vt-muted">العذيبة، مسقط، سلطنة عُمان</p>
+              <a href="https://maps.google.com/?q=Al+Athaiba+Muscat+Oman" class="vt-text-link mt-3" rel="noopener noreferrer" target="_blank">{% if is_arabic %}عرض على الخريطة{% else %}View on map{% endif %}</a>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+              <p class="font-semibold text-vt-navy-900 en">Regional Office — Syria</p>
+              <p class="font-semibold text-vt-navy-900 ar">المكتب الإقليمي — سوريا</p>
+              <p class="en mt-2 text-sm text-vt-muted">Al Mazzeh, Damascus, Syrian Arab Republic</p>
+              <p class="ar mt-2 text-sm text-vt-muted">المزة، دمشق، الجمهورية العربية السورية</p>
+              <a href="https://maps.google.com/?q=Al+Mazzeh+Damascus" class="vt-text-link mt-3" rel="noopener noreferrer" target="_blank">{% if is_arabic %}عرض على الخريطة{% else %}View on map{% endif %}</a>
+            </div>
+            <p class="text-sm text-vt-muted">
+              <strong class="text-vt-navy-900">{% if is_arabic %}الموقع:{% else %}Website:{% endif %}</strong>
+              <a href="{% url 'contact' %}" class="vt-text-link ms-1">{% if is_arabic %}تواصل معنا{% else %}Contact us{% endif %}</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <p class="mt-8 text-center text-sm text-vt-muted">{% if is_arabic %}هذا النموذج يعرض رسالة نجاح فقط. لإرسال بريد فعلي، قم بإعداد إعدادات البريد في Django أو اربط خدمة بريد لاحقًا.{% else %}This form shows a success message only. To send email, configure Django email settings or connect a service later.{% endif %}</p>
+  </div>
+</section>
+{% endblock %}

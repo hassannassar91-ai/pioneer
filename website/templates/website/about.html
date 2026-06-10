@@ -1,0 +1,81 @@
+{% extends "website/base.html" %}
+
+{% block title %}About — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "website/partials/_page_hero.html" with eyebrow_en="About us" eyebrow_ar="من نحن" title_en='About <span class="vt-heading-accent">Pioneer Smart Systems</span>' title_ar='عن <span class="vt-heading-accent">Pioneer Smart Systems</span>' lead_en="Pioneer Smart Systems is a technology company focused on enabling digital transformation through intelligent platforms, enterprise solutions, and execution-driven services. We combine strategic thinking with technical delivery to help organizations modernize, integrate, and scale with confidence." lead_ar="Pioneer Smart Systems هي شركة تقنية متخصصة في تمكين التحول الرقمي من خلال منصات ذكية، وحلول مؤسسية، وخدمات تنفيذية ترتكز على النتائج. نجمع بين التفكير الاستراتيجي والقدرة التقنية لمساعدة المؤسسات على التحديث والتكامل والتوسع بثقة." %}
+
+<section class="vt-section-light py-16 sm:py-20">
+  <div class="vt-container-wide space-y-8">
+    <article class="vt-card vt-reveal">
+      <h2 class="text-2xl font-bold text-vt-navy-900 en">Vision and mission</h2>
+      <h2 class="text-2xl font-bold text-vt-navy-900 ar">الرؤية والرسالة</h2>
+      <div class="mt-6 space-y-4 text-vt-muted">
+        <p class="en"><strong class="text-vt-navy-900">Vision — </strong>To be a trusted technology partner for organizations seeking scalable digital growth and measurable transformation impact.</p>
+        <p class="ar"><strong class="text-vt-navy-900">الرؤية — </strong>أن نكون شريكاً تقنياً موثوقاً للمؤسسات التي تسعى إلى نمو رقمي قابل للتوسع وأثر تحولي ملموس.</p>
+        <p class="en"><strong class="text-vt-navy-900">Mission — </strong>To design, deliver, and support practical technology solutions that improve performance, accelerate innovation, and create long-term value.</p>
+        <p class="ar"><strong class="text-vt-navy-900">الرسالة — </strong>تصميم وتقديم ودعم حلول تقنية عملية ترفع الأداء، وتسرع الابتكار، وتخلق قيمة مستدامة طويلة الأجل.</p>
+      </div>
+    </article>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="vt-card vt-reveal" data-reveal-delay="0">
+        <div class="mb-3 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+        </div>
+        <h3 class="font-bold text-vt-navy-900 en">Vision</h3>
+        <h3 class="font-bold text-vt-navy-900 ar">الرؤية</h3>
+        <p class="en mt-2 text-sm text-vt-muted">Trusted partner for scalable digital growth.</p>
+        <p class="ar mt-2 text-sm text-vt-muted">شريك موثوق للنمو الرقمي القابل للتوسع.</p>
+      </article>
+      <article class="vt-card vt-reveal" data-reveal-delay="60">
+        <div class="mb-3 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699-.119A6 6 0 0118 9.75a6 6 0 01-6 6m-2.699-.119A6 6 0 015.25 9.75a6 6 0 016-6m0 0V4.5" /></svg>
+        </div>
+        <h3 class="font-bold text-vt-navy-900 en">Mission</h3>
+        <h3 class="font-bold text-vt-navy-900 ar">الرسالة</h3>
+        <p class="en mt-2 text-sm text-vt-muted">Practical solutions that create long-term value.</p>
+        <p class="ar mt-2 text-sm text-vt-muted">حلول عملية تخلق قيمة مستدامة.</p>
+      </article>
+      <article class="vt-card vt-reveal" data-reveal-delay="120">
+        <div class="mb-3 inline-flex size-10 items-center justify-center rounded-lg bg-vt-cyan/10 text-vt-blue">
+          <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+        </div>
+        <h3 class="font-bold text-vt-navy-900 en">Values</h3>
+        <h3 class="font-bold text-vt-navy-900 ar">القيم</h3>
+        <p class="en mt-2 text-sm text-vt-muted">Innovate, integrate, and inspire with integrity.</p>
+        <p class="ar mt-2 text-sm text-vt-muted">نبتكر وندمج ونُلهم بنزاهة.</p>
+      </article>
+    </div>
+
+    <article class="vt-card vt-reveal" data-reveal-delay="80">
+      <h2 class="text-2xl font-bold text-vt-navy-900 en">Regional presence</h2>
+      <h2 class="text-2xl font-bold text-vt-navy-900 ar">الانتشار الإقليمي</h2>
+      <p class="en mt-4 text-vt-muted">Our footprint spans 14+ countries across the region, enabling us to serve organizations with local context, regional agility, and broad implementation exposure—including Jordan, KSA, Oman, UAE, Iraq, Bahrain, Palestine, Syria, Libya, Lebanon, and others.</p>
+      <p class="ar mt-4 text-vt-muted">يمتد حضورنا إلى أكثر من 14 دولة في المنطقة، مما يمكننا من خدمة المؤسسات بفهم محلي، ومرونة إقليمية، وخبرة تنفيذية واسعة، في دول تشمل الأردن، السعودية، عُمان، الإمارات، العراق، البحرين، فلسطين، سوريا، ليبيا، لبنان وغيرها.</p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+          <p class="text-sm font-semibold text-vt-navy-900 en">Head Office — Jordan</p>
+          <p class="text-sm font-semibold text-vt-navy-900 ar">المكتب الرئيسي — الأردن</p>
+          <p class="mt-1 text-sm text-vt-muted en">7th Circle, Amman</p>
+          <p class="mt-1 text-sm text-vt-muted ar">الدوار السابع، عمّان</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+          <p class="text-sm font-semibold text-vt-navy-900 en">Regional Office — Oman</p>
+          <p class="text-sm font-semibold text-vt-navy-900 ar">المكتب الإقليمي — عُمان</p>
+          <p class="mt-1 text-sm text-vt-muted en">Al Athaiba, Muscat</p>
+          <p class="mt-1 text-sm text-vt-muted ar">العذيبة، مسقط</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+          <p class="text-sm font-semibold text-vt-navy-900 en">Regional Office — Syria</p>
+          <p class="text-sm font-semibold text-vt-navy-900 ar">المكتب الإقليمي — سوريا</p>
+          <p class="mt-1 text-sm text-vt-muted en">Al Mazzeh, Damascus</p>
+          <p class="mt-1 text-sm text-vt-muted ar">المزة، دمشق</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+{% include "website/partials/_cta_band.html" with title_en="Ready to work together?" title_ar="هل أنتم مستعدون للانطلاق؟" text_en="Let's discuss how Pioneer Smart Systems can support your transformation goals." text_ar="لنناقش كيف يمكن لـ Pioneer Smart Systems دعم أهداف تحولكم." cta_en="Contact us" cta_ar="تواصل معنا" %}
+{% endblock %}

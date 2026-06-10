@@ -1,0 +1,114 @@
+{% extends "website/base.html" %}
+
+{% block title %}Solutions — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "website/partials/_page_hero.html" with eyebrow_en="Enterprise solutions" eyebrow_ar="حلول مؤسسية" title_en='Enterprise <span class="vt-heading-accent">solutions</span> built for scale' title_ar='حلول <span class="vt-heading-accent">مؤسسية</span> مصممة للنمو والتوسع' lead_en="Our solutions are designed to solve operational complexity, modernize service delivery, and create measurable business impact across critical functions and sectors." lead_ar="صُممت حلولنا لمعالجة التعقيد التشغيلي، وتحديث تقديم الخدمات، وتحقيق أثر أعمال ملموس عبر الوظائف والقطاعات الحيوية." %}
+
+<nav class="sticky top-[4.5rem] z-40 border-b border-slate-200 bg-white/95 backdrop-blur-sm" aria-label="{% if is_arabic %}تنقل الحلول{% else %}Solutions navigation{% endif %}">
+  <div class="vt-container-wide flex gap-1 overflow-x-auto py-3 text-sm">
+    <a href="#digital-transformation" class="shrink-0 rounded-lg px-3 py-2 font-medium text-vt-muted hover:bg-vt-surface hover:text-vt-blue">{% if is_arabic %}التحول الرقمي{% else %}Digital Transformation{% endif %}</a>
+    <a href="#big-data-ai" class="shrink-0 rounded-lg px-3 py-2 font-medium text-vt-muted hover:bg-vt-surface hover:text-vt-blue">{% if is_arabic %}البيانات والذكاء{% else %}Big Data &amp; AI{% endif %}</a>
+    <a href="#infrastructure" class="shrink-0 rounded-lg px-3 py-2 font-medium text-vt-muted hover:bg-vt-surface hover:text-vt-blue">{% if is_arabic %}البنية التحتية{% else %}Infrastructure{% endif %}</a>
+    <a href="#managed-services" class="shrink-0 rounded-lg px-3 py-2 font-medium text-vt-muted hover:bg-vt-surface hover:text-vt-blue">{% if is_arabic %}الخدمات المدارة{% else %}Managed Services{% endif %}</a>
+  </div>
+</nav>
+
+<section class="vt-section-light py-16 sm:py-20">
+  <div class="vt-container-wide space-y-8">
+    <article id="digital-transformation" class="vt-card vt-reveal scroll-mt-36">
+      <h2 class="text-2xl font-bold text-vt-navy-900 en">Digital Transformation</h2>
+      <h2 class="text-2xl font-bold text-vt-navy-900 ar">التحول الرقمي</h2>
+      <p class="en mt-4 text-vt-muted">We help organizations digitize services, modernize workflows, and build enterprise applications faster through low-code capabilities that reduce development effort, improve flexibility, and accelerate time-to-value.</p>
+      <p class="ar mt-4 text-vt-muted">نساعد المؤسسات على رقمنة الخدمات، وتحديث سير العمل، وبناء تطبيقات مؤسسية بسرعة أكبر من خلال قدرات منخفضة الكود تقلل جهد التطوير، وتعزز المرونة، وتسرع الوصول إلى القيمة.</p>
+      <h3 class="en mt-6 font-semibold text-vt-navy-900">Benefits</h3>
+      <h3 class="ar mt-6 font-semibold text-vt-navy-900">الفوائد</h3>
+      <div class="mt-4 grid gap-6 md:grid-cols-2">
+        <ul class="vt-check-list en">
+          <li>Rapid application delivery</li>
+          <li>Reduced development cost</li>
+          <li>Easier business and IT collaboration</li>
+          <li>Faster process automation</li>
+        </ul>
+        <ul class="vt-check-list ar">
+          <li>إطلاق أسرع للتطبيقات</li>
+          <li>خفض تكلفة التطوير</li>
+          <li>تعاون أفضل بين الأعمال وتقنية المعلومات</li>
+          <li>تسريع أتمتة الإجراءات</li>
+        </ul>
+      </div>
+    </article>
+
+    <article id="big-data-ai" class="vt-card vt-reveal scroll-mt-36" data-reveal-delay="60">
+      <h2 class="text-2xl font-bold text-vt-navy-900 en">Big Data &amp; AI Solutions</h2>
+      <h2 class="text-2xl font-bold text-vt-navy-900 ar">حلول البيانات الضخمة والذكاء الصناعي</h2>
+      <p class="en mt-4 text-vt-muted">Our AI and analytics capabilities help organizations unify data, create decision-ready dashboards, build predictive models, and enable more intelligent operations across customer, citizen, and business environments.</p>
+      <p class="ar mt-4 text-vt-muted">تساعد قدراتنا في الذكاء الصناعي والتحليلات المؤسسات على توحيد البيانات، وبناء لوحات معلومات جاهزة لاتخاذ القرار، وإنشاء نماذج تنبؤية، وتمكين عمليات أكثر ذكاءً عبر بيئات العميل والمواطن والأعمال.</p>
+      <h3 class="en mt-6 font-semibold text-vt-navy-900">Benefits</h3>
+      <h3 class="ar mt-6 font-semibold text-vt-navy-900">الفوائد</h3>
+      <div class="mt-4 grid gap-6 md:grid-cols-2">
+        <ul class="vt-check-list en">
+          <li>Unified data from multiple sources</li>
+          <li>Descriptive and predictive analytics</li>
+          <li>Secure integration and API connectivity</li>
+          <li>Improved decision-making and operational efficiency</li>
+        </ul>
+        <ul class="vt-check-list ar">
+          <li>توحيد البيانات من مصادر متعددة</li>
+          <li>تحليلات وصفية وتنبؤية</li>
+          <li>تكامل آمن وواجهات API مرنة</li>
+          <li>تحسين اتخاذ القرار ورفع الكفاءة التشغيلية</li>
+        </ul>
+      </div>
+    </article>
+
+    <article id="infrastructure" class="vt-card vt-reveal scroll-mt-36" data-reveal-delay="60">
+      <h2 class="text-2xl font-bold text-vt-navy-900 en">Digital Infrastructure</h2>
+      <h2 class="text-2xl font-bold text-vt-navy-900 ar">البنية التحتية الرقمية</h2>
+      <p class="en mt-4 text-vt-muted">We design and deliver resilient infrastructure environments that support performance, continuity, and security, from core compute and storage to cloud, backup, networking, and cyber resilience.</p>
+      <p class="ar mt-4 text-vt-muted">نصمم وننفذ بيئات بنية تحتية مرنة تدعم الأداء والاستمرارية والأمان، بدءاً من الحوسبة والتخزين الأساسية وصولاً إلى السحابة والنسخ الاحتياطي والشبكات والجاهزية السيبرانية.</p>
+      <h3 class="en mt-6 font-semibold text-vt-navy-900">Benefits</h3>
+      <h3 class="ar mt-6 font-semibold text-vt-navy-900">الفوائد</h3>
+      <div class="mt-4 grid gap-6 md:grid-cols-2">
+        <ul class="vt-check-list en">
+          <li>Modern infrastructure architecture</li>
+          <li>Hybrid and cloud-ready environments</li>
+          <li>Better availability and protection</li>
+          <li>Enterprise-grade support and optimization</li>
+        </ul>
+        <ul class="vt-check-list ar">
+          <li>بنية تقنية حديثة</li>
+          <li>بيئات هجينة وجاهزة للسحابة</li>
+          <li>توافرية أعلى وحماية أفضل</li>
+          <li>دعم وتحسين بمستوى مؤسسي</li>
+        </ul>
+      </div>
+    </article>
+
+    <article id="managed-services" class="vt-card vt-reveal scroll-mt-36" data-reveal-delay="60">
+      <h2 class="text-2xl font-bold text-vt-navy-900 en">Managed Services &amp; Consulting</h2>
+      <h2 class="text-2xl font-bold text-vt-navy-900 ar">الخدمات المدارة والاستشارات</h2>
+      <p class="en mt-4 text-vt-muted">We provide long-term managed services that help clients maintain stability, improve visibility, and reduce operational pressure through structured support, advisory expertise, and continuous service optimization.</p>
+      <p class="ar mt-4 text-vt-muted">نقدم خدمات مدارة طويلة الأمد تساعد العملاء على الحفاظ على الاستقرار، وتحسين الرؤية التشغيلية، وتقليل الضغط اليومي عبر دعم منظم، وخبرة استشارية، وتحسين مستمر للخدمة.</p>
+      <h3 class="en mt-6 font-semibold text-vt-navy-900">Benefits</h3>
+      <h3 class="ar mt-6 font-semibold text-vt-navy-900">الفوائد</h3>
+      <div class="mt-4 grid gap-6 md:grid-cols-2">
+        <ul class="vt-check-list en">
+          <li>Ongoing support and monitoring</li>
+          <li>Service-level discipline</li>
+          <li>Strategic technology advisory</li>
+          <li>Lower operational risk</li>
+        </ul>
+        <ul class="vt-check-list ar">
+          <li>دعم ومتابعة مستمران</li>
+          <li>انضباط تشغيلي مبني على مستويات خدمة</li>
+          <li>استشارات تقنية استراتيجية</li>
+          <li>خفض المخاطر التشغيلية</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+{% include "website/partials/_cta_band.html" %}
+{% endblock %}

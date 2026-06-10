@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{% if is_arabic %}ar{% else %}en{% endif %}" dir="{% if is_arabic %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ company_name }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% if is_arabic %}{{ company_name_ar }} — حلول تحول رقمي مؤسسية عبر المنطقة{% else %}{{ company_name }} — enterprise digital transformation solutions across the region{% endif %}{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}{{ company_name }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{% if is_arabic %}نبتكر • ندمج • نُلهم — حلول تقنية للمؤسسات{% else %}Innovate • Integrate • Inspire — enterprise technology solutions{% endif %}{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{% static 'website/images/pioneer-logo.png' %}">
+  <link rel="icon" href="{% static 'website/images/pioneer-icon.png' %}" type="image/png">
+  <link rel="apple-touch-icon" href="{% static 'website/images/pioneer-icon.png' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'website/css/site.css' %}">
+</head>
+<body class="{% if is_arabic %}lang-ar{% else %}lang-en{% endif %}">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-vt-cyan focus:px-4 focus:py-2 focus:text-vt-navy-950">
+    {% if is_arabic %}انتقل إلى المحتوى{% else %}Skip to main content{% endif %}
+  </a>
+
+  {% include "website/partials/_header.html" %}
+  {% include "website/partials/_mobile_nav.html" %}
+
+  {% if messages %}
+  <div class="vt-container pt-24" role="status" aria-live="polite">
+    {% for message in messages %}
+    <p class="mb-2 rounded-lg px-4 py-3 text-sm {% if message.tags == 'error' %}bg-red-100 text-red-800{% else %}bg-green-100 text-green-800{% endif %}">{{ message }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <main id="main-content" class="flex-1">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "website/partials/_footer.html" %}
+
+  <script src="{% static 'website/js/vt-nav.js' %}" defer></script>
+  <script src="{% static 'website/js/vt-animations.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

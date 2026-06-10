@@ -1,0 +1,58 @@
+{% extends "website/base.html" %}
+
+{% block title %}Projects — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "website/partials/_page_hero.html" with eyebrow_en="Projects & impact" eyebrow_ar="المشاريع والأثر" title_en='Projects <span class="vt-heading-accent">&amp; impact</span>' title_ar='المشاريع <span class="vt-heading-accent">والأثر</span>' lead_en="Pioneer Smart Systems brings a practical, execution-focused approach to transformation initiatives, with experience shaped by complex regional projects and multi-sector implementation exposure." lead_ar="تقدم Pioneer Smart Systems نهجاً عملياً يركز على التنفيذ في مبادرات التحول، بخبرة تشكلت من مشاريع إقليمية معقدة وتجارب متعددة القطاعات." %}
+
+<section class="vt-section-light py-16 sm:py-20">
+  <div class="vt-container-wide space-y-8">
+    <article class="vt-card vt-reveal">
+      <h2 class="text-2xl font-bold text-vt-navy-900 en">What our projects deliver</h2>
+      <h2 class="text-2xl font-bold text-vt-navy-900 ar">ماذا تحقق مشاريعنا</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <ul class="vt-check-list en">
+          <li>Operational efficiency through automation and integration</li>
+          <li>Cost optimization through better systems design and execution</li>
+          <li>Better service quality through digital enablement</li>
+          <li>Stronger decision-making through analytics and visibility</li>
+        </ul>
+        <ul class="vt-check-list ar">
+          <li>كفاءة تشغيلية أعلى عبر الأتمتة والتكامل</li>
+          <li>تحسين التكلفة عبر تصميم وتنفيذ أفضل للأنظمة</li>
+          <li>جودة خدمة أعلى عبر التمكين الرقمي</li>
+          <li>قرارات أقوى عبر التحليلات والرؤية الواضحة</li>
+        </ul>
+      </div>
+      <p class="en mt-8 text-vt-muted">Our delivery mindset is centered on measurable outcomes, execution discipline, and alignment with business priorities—timely delivery, budget discipline, and large-scale execution credibility in the region.</p>
+      <p class="ar mt-8 text-vt-muted">يرتكز نهجنا في التنفيذ على النتائج القابلة للقياس، والانضباط في التسليم، والمواءمة مع أولويات الأعمال، بما يشمل الالتزام بالوقت والميزانية والقدرة على تنفيذ مشاريع كبيرة في المنطقة.</p>
+    </article>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="rounded-2xl border border-white/10 bg-vt-navy-900 p-6 text-white vt-reveal" data-reveal-delay="0">
+        <p class="vt-stat-num text-3xl">↑</p>
+        <h3 class="mt-2 font-bold en">Operational efficiency</h3>
+        <h3 class="mt-2 font-bold ar">كفاءة تشغيلية</h3>
+        <p class="en mt-2 text-sm text-vt-silver">Automation and integration that reduce manual effort.</p>
+        <p class="ar mt-2 text-sm text-vt-silver">أتمتة وتكامل يقللان الجهد اليدوي.</p>
+      </article>
+      <article class="rounded-2xl border border-white/10 bg-vt-navy-900 p-6 text-white vt-reveal" data-reveal-delay="60">
+        <p class="vt-stat-num text-3xl">↓</p>
+        <h3 class="mt-2 font-bold en">Cost optimization</h3>
+        <h3 class="mt-2 font-bold ar">تحسين التكلفة</h3>
+        <p class="en mt-2 text-sm text-vt-silver">Better systems design and disciplined execution.</p>
+        <p class="ar mt-2 text-sm text-vt-silver">تصميم أنظمة أفضل وتنفيذ منضبط.</p>
+      </article>
+      <article class="rounded-2xl border border-white/10 bg-vt-navy-900 p-6 text-white vt-reveal" data-reveal-delay="120">
+        <p class="vt-stat-num text-3xl">★</p>
+        <h3 class="mt-2 font-bold en">Service quality</h3>
+        <h3 class="mt-2 font-bold ar">جودة الخدمة</h3>
+        <p class="en mt-2 text-sm text-vt-silver">Digital enablement that improves citizen and customer experience.</p>
+        <p class="ar mt-2 text-sm text-vt-silver">تمكين رقمي يحسن تجربة المواطن والعميل.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% include "website/partials/_cta_band.html" %}
+{% endblock %}

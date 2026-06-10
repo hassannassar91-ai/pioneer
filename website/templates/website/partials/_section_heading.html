@@ -1,0 +1,14 @@
+<div class="mb-10 text-center vt-reveal">
+  {% if tagline %}
+  <p class="vt-tagline mb-3">{{ tagline }}</p>
+  {% endif %}
+  <h2 class="text-3xl font-bold tracking-tight text-vt-navy-900 sm:text-4xl">
+    {{ title|safe }}
+  </h2>
+  {% if subtitle_en %}
+  <p class="en mx-auto mt-4 max-w-2xl text-lg text-vt-muted">{{ subtitle_en }}</p>
+  {% endif %}
+  {% if subtitle_ar %}
+  <p class="ar mx-auto mt-4 max-w-2xl text-lg text-vt-muted">{{ subtitle_ar }}</p>
+  {% endif %}
+</div>

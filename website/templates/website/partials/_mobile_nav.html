@@ -1,0 +1,42 @@
+<div
+  id="mobile-nav"
+  class="fixed inset-0 z-[100] hidden lg:hidden"
+  aria-hidden="true"
+  data-mobile-nav
+>
+  <div class="absolute inset-0 bg-vt-navy-950/70 backdrop-blur-sm" data-nav-backdrop></div>
+  <nav
+    class="absolute inset-y-0 end-0 flex w-full max-w-sm flex-col bg-vt-navy-950 shadow-2xl {% if is_arabic %}border-s{% else %}border-e{% endif %} border-vt-cyan/15"
+    aria-label="{% if is_arabic %}التنقل للجوال{% else %}Mobile navigation{% endif %}"
+    data-nav-panel
+  >
+    <div class="flex items-center justify-between border-b border-white/10 px-4 py-4">
+      <span class="text-sm font-semibold text-vt-silver">{% if is_arabic %}القائمة{% else %}Menu{% endif %}</span>
+      <button
+        type="button"
+        class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg text-vt-silver hover:text-white"
+        aria-label="{% if is_arabic %}إغلاق القائمة{% else %}Close menu{% endif %}"
+        data-nav-close
+      >
+        <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-1 flex-col gap-1 overflow-y-auto p-4">
+      <a href="{% url 'home' %}" class="min-h-11 rounded-lg px-4 py-3 text-base font-medium text-vt-silver hover:bg-white/5 hover:text-white" data-nav-link>{% if is_arabic %}الرئيسية{% else %}Home{% endif %}</a>
+      <a href="{% url 'about' %}" class="min-h-11 rounded-lg px-4 py-3 text-base font-medium text-vt-silver hover:bg-white/5 hover:text-white" data-nav-link>{% if is_arabic %}من نحن{% else %}About{% endif %}</a>
+      <a href="{% url 'solutions' %}" class="min-h-11 rounded-lg px-4 py-3 text-base font-medium text-vt-silver hover:bg-white/5 hover:text-white" data-nav-link>{% if is_arabic %}الحلول{% else %}Solutions{% endif %}</a>
+      <a href="{% url 'industries' %}" class="min-h-11 rounded-lg px-4 py-3 text-base font-medium text-vt-silver hover:bg-white/5 hover:text-white" data-nav-link>{% if is_arabic %}القطاعات{% else %}Industries{% endif %}</a>
+      <a href="{% url 'products' %}" class="min-h-11 rounded-lg px-4 py-3 text-base font-medium text-vt-silver hover:bg-white/5 hover:text-white" data-nav-link>{% if is_arabic %}المنتجات{% else %}Products{% endif %}</a>
+      <a href="{% url 'projects' %}" class="min-h-11 rounded-lg px-4 py-3 text-base font-medium text-vt-silver hover:bg-white/5 hover:text-white" data-nav-link>{% if is_arabic %}المشاريع{% else %}Projects{% endif %}</a>
+      <a href="{% url 'contact' %}" class="min-h-11 rounded-lg px-4 py-3 text-base font-medium text-vt-silver hover:bg-white/5 hover:text-white" data-nav-link>{% if is_arabic %}تواصل معنا{% else %}Contact{% endif %}</a>
+    </div>
+    <div class="border-t border-white/10 p-4">
+      <div class="inline-flex w-full overflow-hidden rounded-full border border-vt-cyan/35" role="group" aria-label="{% if is_arabic %}تبديل اللغة{% else %}Language switch{% endif %}">
+        <a class="flex min-h-11 flex-1 items-center justify-center text-xs font-bold transition-colors {% if not is_arabic %}bg-vt-cyan/25 text-white{% else %}text-vt-silver{% endif %}" href="{% url 'set_language' %}?lang=en&next={{ request.get_full_path|urlencode }}">EN</a>
+        <a class="flex min-h-11 flex-1 items-center justify-center text-xs font-bold transition-colors {% if is_arabic %}bg-vt-cyan/25 text-white{% else %}text-vt-silver{% endif %}" href="{% url 'set_language' %}?lang=ar&next={{ request.get_full_path|urlencode }}">AR</a>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,20 @@
+<section class="vt-section-dark vt-pixel-grid py-16 sm:py-20">
+  <div class="vt-container text-center vt-reveal">
+    <h2 class="text-3xl font-bold text-white sm:text-4xl">
+      {% if title_en %}<span class="en">{{ title_en }}</span>{% endif %}
+      {% if title_ar %}<span class="ar">{{ title_ar }}</span>{% endif %}
+    </h2>
+    {% if text_en %}
+    <p class="en mx-auto mt-4 max-w-2xl text-lg text-vt-silver">{{ text_en }}</p>
+    {% endif %}
+    {% if text_ar %}
+    <p class="ar mx-auto mt-4 max-w-2xl text-lg text-vt-silver">{{ text_ar }}</p>
+    {% endif %}
+    <div class="mt-8">
+      <a href="{% url 'contact' %}" class="vt-btn-primary">
+        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        {% if is_arabic %}{{ cta_ar|default:"احجز استشارة" }}{% else %}{{ cta_en|default:"Book a consultation" }}{% endif %}
+      </a>
+    </div>
+  </div>
+</section>

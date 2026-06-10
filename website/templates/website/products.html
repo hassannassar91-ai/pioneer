@@ -1,0 +1,69 @@
+{% extends "website/base.html" %}
+
+{% block title %}Products — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "website/partials/_page_hero.html" with eyebrow_en="Products & platforms" eyebrow_ar="المنتجات والمنصات" title_en='Products <span class="vt-heading-accent">&amp; platforms</span>' title_ar='المنتجات <span class="vt-heading-accent">والمنصات</span>' lead_en="Our product portfolio combines configurable business applications with modern data and low-code capabilities to help organizations move faster and operate smarter." lead_ar="يجمع portfolio المنتجات لدينا بين تطبيقات أعمال مرنة وقدرات حديثة في البيانات والتطوير منخفض الكود لمساعدة المؤسسات على العمل بسرعة وذكاء أكبر." %}
+
+<section class="vt-section-light py-16 sm:py-20">
+  <div class="vt-container-wide">
+    <div class="grid gap-8 lg:grid-cols-3">
+      <article class="vt-card vt-reveal flex flex-col" data-reveal-delay="0">
+        <h2 class="text-xl font-bold text-vt-navy-900">Visions ERP</h2>
+        <p class="en mt-4 flex-1 text-vt-muted">Visions ERP is a flexible business platform designed to unify finance, human resources, procurement, inventory, sales, and operational processes in one integrated environment.</p>
+        <p class="ar mt-4 flex-1 text-vt-muted">Visions ERP هو منصة أعمال مرنة صممت لتوحيد المالية، والموارد البشرية، والمشتريات، والمخزون، والمبيعات، والعمليات ضمن بيئة واحدة متكاملة.</p>
+        <h3 class="en mt-6 text-sm font-semibold uppercase tracking-wide text-vt-navy-900">Business benefits</h3>
+        <h3 class="ar mt-6 text-sm font-semibold uppercase tracking-wide text-vt-navy-900">فوائد الأعمال</h3>
+        <ul class="vt-check-list en mt-3">
+          <li>Better visibility across departments</li>
+          <li>Improved operational control</li>
+          <li>Scalable foundation for growth</li>
+        </ul>
+        <ul class="vt-check-list ar mt-3">
+          <li>رؤية أوضح عبر الإدارات</li>
+          <li>ضبط تشغيلي أفضل</li>
+          <li>أساس قابل للتوسع للنمو</li>
+        </ul>
+      </article>
+      <article class="vt-card vt-reveal flex flex-col" data-reveal-delay="80">
+        <h2 class="text-xl font-bold text-vt-navy-900 en">AI &amp; Analytics Platform</h2>
+        <h2 class="text-xl font-bold text-vt-navy-900 ar">منصة الذكاء الصناعي والتحليلات</h2>
+        <p class="en mt-4 flex-1 text-vt-muted">Our AI platform enables organizations to integrate data, automate analysis, generate predictive insights, and support decisions with faster and clearer intelligence.</p>
+        <p class="ar mt-4 flex-1 text-vt-muted">تتيح منصة الذكاء الصناعي لدينا للمؤسسات دمج البيانات، وأتمتة التحليل، وتوليد رؤى تنبؤية، ودعم القرارات بذكاء أسرع وأوضح.</p>
+        <h3 class="en mt-6 text-sm font-semibold uppercase tracking-wide text-vt-navy-900">Business benefits</h3>
+        <h3 class="ar mt-6 text-sm font-semibold uppercase tracking-wide text-vt-navy-900">فوائد الأعمال</h3>
+        <ul class="vt-check-list en mt-3">
+          <li>Faster decisions</li>
+          <li>Improved service insight</li>
+          <li>Better operational forecasting</li>
+        </ul>
+        <ul class="vt-check-list ar mt-3">
+          <li>قرارات أسرع</li>
+          <li>فهم أعمق للخدمة</li>
+          <li>توقعات تشغيلية أفضل</li>
+        </ul>
+      </article>
+      <article class="vt-card vt-reveal flex flex-col" data-reveal-delay="160">
+        <h2 class="text-xl font-bold text-vt-navy-900 en">Low-Code Platform</h2>
+        <h2 class="text-xl font-bold text-vt-navy-900 ar">منصة التطوير منخفض الكود</h2>
+        <p class="en mt-4 flex-1 text-vt-muted">Our low-code platform helps organizations rapidly build business applications, portals, forms, workflows, and service experiences with less complexity and faster turnaround.</p>
+        <p class="ar mt-4 flex-1 text-vt-muted">تساعد منصة التطوير منخفض الكود المؤسسات على بناء تطبيقات الأعمال، والبوابات، والنماذج، وسير العمل، وتجارب الخدمة بسرعة أعلى وتعقيد أقل.</p>
+        <h3 class="en mt-6 text-sm font-semibold uppercase tracking-wide text-vt-navy-900">Business benefits</h3>
+        <h3 class="ar mt-6 text-sm font-semibold uppercase tracking-wide text-vt-navy-900">فوائد الأعمال</h3>
+        <ul class="vt-check-list en mt-3">
+          <li>Accelerated delivery</li>
+          <li>Lower build cost</li>
+          <li>Faster response to change</li>
+        </ul>
+        <ul class="vt-check-list ar mt-3">
+          <li>تسريع الإطلاق</li>
+          <li>خفض تكلفة البناء</li>
+          <li>استجابة أسرع للتغيير</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% include "website/partials/_cta_band.html" %}
+{% endblock %}

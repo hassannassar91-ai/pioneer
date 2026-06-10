@@ -1,0 +1,51 @@
+{% load static %}
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 vt-header-top" data-header>
+  <div class="vt-container flex items-center justify-between gap-4 py-3">
+    <a href="{% url 'home' %}" class="shrink-0">
+      <img
+        src="{% static 'website/images/pioneer-logo.png' %}"
+        alt="{{ company_name }}"
+        class="hidden h-12 w-auto sm:block md:h-14"
+        width="320"
+        height="120"
+        decoding="async"
+        fetchpriority="high"
+      >
+      <img
+        src="{% static 'website/images/pioneer-icon.png' %}"
+        alt="{{ company_name }}"
+        class="h-10 w-auto sm:hidden"
+        width="64"
+        height="64"
+        decoding="async"
+      >
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="{% if is_arabic %}التنقل الرئيسي{% else %}Main navigation{% endif %}">
+      <a href="{% url 'home' %}" class="vt-nav-link {% if request.resolver_match.url_name == 'home' %}is-active{% endif %}">{% if is_arabic %}الرئيسية{% else %}Home{% endif %}</a>
+      <a href="{% url 'about' %}" class="vt-nav-link {% if request.resolver_match.url_name == 'about' %}is-active{% endif %}">{% if is_arabic %}من نحن{% else %}About{% endif %}</a>
+      <a href="{% url 'solutions' %}" class="vt-nav-link {% if request.resolver_match.url_name == 'solutions' %}is-active{% endif %}">{% if is_arabic %}الحلول{% else %}Solutions{% endif %}</a>
+      <a href="{% url 'industries' %}" class="vt-nav-link {% if request.resolver_match.url_name == 'industries' %}is-active{% endif %}">{% if is_arabic %}القطاعات{% else %}Industries{% endif %}</a>
+      <a href="{% url 'products' %}" class="vt-nav-link {% if request.resolver_match.url_name == 'products' %}is-active{% endif %}">{% if is_arabic %}المنتجات{% else %}Products{% endif %}</a>
+      <a href="{% url 'projects' %}" class="vt-nav-link {% if request.resolver_match.url_name == 'projects' %}is-active{% endif %}">{% if is_arabic %}المشاريع{% else %}Projects{% endif %}</a>
+      <a href="{% url 'contact' %}" class="vt-nav-link {% if request.resolver_match.url_name == 'contact' %}is-active{% endif %}">{% if is_arabic %}تواصل معنا{% else %}Contact{% endif %}</a>
+      <div class="ms-2 inline-flex overflow-hidden rounded-full border border-vt-cyan/35" role="group" aria-label="{% if is_arabic %}تبديل اللغة{% else %}Language switch{% endif %}">
+        <a class="min-h-11 min-w-11 inline-flex items-center justify-center px-3 text-xs font-bold transition-colors {% if not is_arabic %}bg-vt-cyan/25 text-white{% else %}text-vt-silver hover:text-white{% endif %}" href="{% url 'set_language' %}?lang=en&next={{ request.get_full_path|urlencode }}">EN</a>
+        <a class="min-h-11 min-w-11 inline-flex items-center justify-center px-3 text-xs font-bold transition-colors {% if is_arabic %}bg-vt-cyan/25 text-white{% else %}text-vt-silver hover:text-white{% endif %}" href="{% url 'set_language' %}?lang=ar&next={{ request.get_full_path|urlencode }}">AR</a>
+      </div>
+    </nav>
+
+    <button
+      type="button"
+      class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg border border-white/15 text-white lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      aria-label="{% if is_arabic %}فتح القائمة{% else %}Open menu{% endif %}"
+      data-nav-toggle
+    >
+      <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div>
+</header>

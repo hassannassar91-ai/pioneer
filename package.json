@@ -1,0 +1,12 @@
+{
+  "name": "pioneer-web",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i website/static/website/css/src/input.css -o website/static/website/css/site.css --minify",
+    "watch:css": "tailwindcss -i website/static/website/css/src/input.css -o website/static/website/css/site.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  }
+}
