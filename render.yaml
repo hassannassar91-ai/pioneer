@@ -1,6 +1,6 @@
 # Deploy: Render Dashboard → New → Blueprint → connect github.com/hassannassar91-ai/pioneer
 # Live URL: https://pioneer-web.onrender.com
-# Custom domain: add under domains below when ready (same pattern as visions-tek.com).
+# No database — sessions/messages use signed cookies (same pattern as the Visions marketing site).
 
 services:
   - type: web
@@ -23,11 +23,3 @@ services:
         value: https://pioneer-web.onrender.com
       - key: DJANGO_SECRET_KEY
         generateValue: true
-      - key: DATABASE_URL
-        fromDatabase:
-          name: pioneer-db
-          property: connectionString
-
-databases:
-  - name: pioneer-db
-    plan: free
