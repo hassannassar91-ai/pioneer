@@ -1,4 +1,6 @@
-# Deploy: Render Dashboard → New → Blueprint → connect this repo.
+# Deploy: Render Dashboard → New → Blueprint → connect github.com/hassannassar91-ai/pioneer
+# Live URL: https://pioneer-web.onrender.com
+# Custom domain: add under domains below when ready (same pattern as visions-tek.com).
 
 services:
   - type: web
